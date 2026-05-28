@@ -9,16 +9,20 @@ public class FlockManager : MonoBehaviour
     public float spawnRadius;
     
 
-    [SerializeField] private List<Boid> boids;
+    [SerializeField] private List<Boid> boid;
     //[SerializeField] private SpatialHash hash;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        for (int i = 0; i < count; i++)
+        foreach (Boid boids in boid)
         {
-            //boids.Add(Instantiate(boids, transform.position, transform.rotation));
+             for (int i = 0; i < count; i++) 
+             {
+                boid.Add(Instantiate(boids, transform.position, transform.rotation)); 
+             }
         }
     }
+    
+    //Seek en flocking Manager o crear los gameobjects de 0 para que hagan el behavior
 
     
     void Update()
