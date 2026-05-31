@@ -5,8 +5,5 @@ public interface ISteeringBehaviour
 {
     public float weight { get; set; }
 
-    public Vector2 Calculate(List<GameObject> neighbors, float self)
-    {
-        return Vector2.zero;
-    }
+    public Vector2 Calculate(List<Transform> neighbors, Transform self);
 }
